@@ -6,21 +6,23 @@
     <link rel="stylesheet" href="views/bootstrap.min.css">
     <link rel="stylesheet" href="views/styles.css">
     <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/angular-animate.min.js"></script>
     <script src="assets/scripts/client.js"></script>
 </head>
 <body ng-controller="MainController">
+
     <h1>Peer Angular Directives</h1>
     <h4>By: Jeremy Cloutier and Wallace Wylie</h4><hr>
 
     <div class="col-md-3">
         <h4>First Directive: ng-mouseover</h4>
-        <button ng-mouseover="count = count + 5" ng-init="count=0" class="btn-info">Increment Count By 5</button><br>
+        <button ng-mouseover="count = count + 5" class="btn-info">Increment Count By 5</button><br>
         <h4 class="countFive">Current Count: {{count}}</h4>
     </div>
 
     <div class="col-md-3">
         <h4>Second Directive: ng-mousemove</h4>
-        <button ng-mousemove="secondcount = secondcount + 1" ng-init="secondcount=0" class="btn-danger">Increment Count When Mouse<br>Moves Inside Element</button><br>
+        <button ng-mousemove="secondcount = secondcount + 1" class="btn-danger">Increment Count When Mouse<br>Moves Inside Element</button><br>
         <h4 class="mouseCount">Current Count: {{secondcount}}</h4>
     </div>
 
@@ -28,10 +30,10 @@
         <h4>Third Directive: ng-switch</h4><br>
 
         <span>Select a Food: </span>
-        <select ng-model="selection" ng-options="food for food in foods">
-        </select>
+        <select ng-model="selection" ng-options="food for food in foods"></select>
         <code>selection={{selection}}</code>
         <hr/>
+
         <div class="animate-switch-container"
              ng-switch on="selection">
             <div class="animate-switch" ng-switch-when="settings">Soup</div>
@@ -39,8 +41,6 @@
             <div class="animate-switch" ng-switch-default>default</div>
         </div>
     </div>
-
-
 
 </body>
 </html>
